@@ -1,0 +1,91 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="referrer" content="no-referrer">
+<title>Connected · GetMeAJob</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<h1>GetMeAJob</h1>
+
+<noscript><p>Please enable JavaScript, or copy the code from the address bar and paste it into the bot.</p></noscript>
+
+<div id="ok" hidden>
+<p><strong>One last step.</strong> Copy this code, then go back to Telegram and paste it into the chat with the bot.</p>
+<textarea id="code" class="codebox" rows="4" readonly aria-label="Your connect code" spellcheck="false" autocomplete="off" autocapitalize="off"></textarea>
+<div class="actions">
+<button type="button" id="copy" class="btn">Copy code</button>
+<a id="tg" class="btn secondary" href="#">Open Telegram</a>
+</div>
+<p>The code works once and expires after 10 minutes. This page does not send it anywhere.</p>
+</div>
+
+<div id="denied" hidden>
+<p>You didn't allow access. Go back to Telegram and try /inbox again.</p>
+<p><a id="tg2" class="btn secondary" href="#">Open Telegram</a></p>
+</div>
+
+<div id="none" hidden>
+<p>Start from /inbox in the bot. This page is where Google sends you after you connect Gmail.</p>
+</div>
+
+<footer><a href="index.html">GetMeAJob</a> · <a href="privacy.html">Privacy policy</a></footer>
+
+<script>
+(function () {
+  "use strict";
+  // The bot's Telegram username, without the @. Set before publishing.
+  const BOT_USERNAME = "get_me_a_job_bot";
+  const TG_URL = "https://t.me/" + BOT_USERNAME;
+
+  const params = new URLSearchParams(location.search);
+  const state = params.get("state");
+  const code = params.get("code");
+  const error = params.get("error");
+  // Drop the values from the address bar and history straight away.
+  history.replaceState(null, "", location.pathname);
+
+  const $ = function (id) { return document.getElementById(id); };
+  $("tg").href = TG_URL;
+  $("tg2").href = TG_URL;
+
+  if (error) {
+    $("denied").hidden = false;
+    return;
+  }
+  if (!state || !code) {
+    $("none").hidden = false;
+    return;
+  }
+
+  const box = $("code");
+  const btn = $("copy");
+  box.value = state + "." + code;
+  $("ok").hidden = false;
+  box.addEventListener("focus", function () { box.select(); });
+  box.addEventListener("click", function () { box.select(); });
+
+  function done() {
+    btn.textContent = "Copied";
+    setTimeout(function () { btn.textContent = "Copy code"; }, 4000);
+  }
+  function fallback() {
+    box.focus();
+    box.select();
+    box.setSelectionRange(0, box.value.length);
+    try { if (document.execCommand("copy")) { done(); } } catch (e) { /* selected for manual copy */ }
+  }
+  btn.addEventListener("click", function () {
+    if (navigator.clipboard && navigator.clipboard.writeText) {
+      navigator.clipboard.writeText(box.value).then(done, fallback);
+    } else {
+      fallback();
+    }
+  });
+})();
+</script>
+</body>
+</html>
