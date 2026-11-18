@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Privacy policy</h1>
-<p>Last updated: 25 October 2026</p>
+<p>Last updated: 18 November 2026</p>
 <p>GetMeAJob is a job-search assistant used through Telegram, run as a small private pilot by one person in the UK. That person decides how your information is used (the "controller" under UK data protection law). You can reach them at <a href="mailto:support@getmeajob.vhanp.com">support@getmeajob.vhanp.com</a>.</p>
 
 <h2>What GetMeAJob stores</h2>
@@ -16,7 +16,7 @@
 <li><strong>Your Telegram ID</strong>, so the bot can recognise you.</li>
 <li><strong>Your profile</strong>: the work history, education, skills and other facts you give it, your CV if you send one, and, if you want them on your CV, your name, email, phone number and town.</li>
 <li><strong>Your job preferences</strong>: roles, places, how far you would travel, pay, and employers you have asked it to skip.</li>
-<li><strong>Jobs and applications</strong>: jobs it has suggested, the ones you picked or turned down, the CVs and letters it wrote for you, and the applications you are tracking with their dates and notes.</li>
+<li><strong>Jobs and applications</strong>: jobs it has suggested, the ones you picked or turned down, the CVs and letters it wrote for you, and the applications you are tracking with their dates and notes. Each job you track has one record (see <a href="#job-records">Your job records</a>).</li>
 <li><strong>Email settings</strong>: if you turn on email, your address and which messages you want by email.</li>
 <li><strong>If you connect Gmail</strong>: short notes about messages that concern your job applications (see below). Never your emails themselves.</li>
 <li><strong>Chat with the assistant</strong>: we keep your last day of chat messages so the assistant can follow the conversation, then delete them. Notes you ask it to remember stay until you remove them in <code>/memory</code>. We never save notes about health, immigration, money worries or other sensitive topics. If you practise an interview, a short record of how it went is kept.</li>
@@ -43,15 +43,23 @@
 <h2>Who else handles your information</h2>
 <ul>
 <li><strong>Amazon Web Services</strong> (London, UK) hosts the database, backups and email sending.</li>
-<li><strong>Anthropic</strong>, the AI company whose model GetMeAJob uses, receives the text needed for each task (for example your CV and a job advert, to write your cover letter). Anthropic does not use this to train its models, and for Gmail it receives only the text of a possibly job-related email, only to pick out the job details. Anthropic deletes the text it receives within 30 days. If it is flagged under Anthropic's Usage Policy, it may be kept for up to 2 years, and the scores from its safety checks for up to 7 years. Chat can include sensitive or distressing wording, so we state both periods.</li>
+<li><strong>Anthropic PBC</strong> (USA), the AI company whose model GetMeAJob uses, receives the text needed for each task (for example your CV and a job advert, to write your cover letter). Anthropic does not use this to train its models, and for Gmail it receives only the text of a possibly job-related email, only to pick out the job details. Anthropic deletes the text it receives within 30 days. If it is flagged under Anthropic's Usage Policy, it may be kept for up to 2 years, and the scores from its safety checks for up to 7 years. Chat can include sensitive or distressing wording, so we state both periods.</li>
 <li><strong>OpenAI</strong> (USA), only if you allow voice notes: your voice note is sent to OpenAI to be turned into text, with the names of the jobs and employers you're tracking to help it hear them. GetMeAJob doesn't keep the audio. OpenAI may keep it for up to 30 days for safety checks and doesn't use it for training.</li>
 <li><strong>Telegram</strong> carries your messages with the bot.</li>
 <li><strong>Google</strong>, only if you connect Gmail.</li>
 <li><strong>Job sites</strong> (such as Reed, Adzuna, NHS Jobs, Jooble and Google's job listings) receive the job titles and places being searched for, never your name or contact details.</li>
 </ul>
 
+<h2>Who processes your data outside the UK</h2>
+<p>Your data is stored on Amazon Web Services in London. To read your CV, write your documents and chat with you, the text involved is sent to Anthropic PBC, an AI company in the United States, and processed there. Anthropic deletes inputs and outputs within 30 days, except that content flagged under its usage policy may be kept for up to two years and safety classification scores for up to seven years. The transfer is made under the UK Addendum to the Standard Contractual Clauses in Anthropic's Data Processing Addendum, which is part of its commercial terms of service.</p>
+<p>If you allow voice notes, the audio and the names of the jobs and employers you are tracking are sent to OpenAI, also a US company, which may keep the audio for up to 30 days for safety checks and does not use it for training; GetMeAJob never keeps the audio. You can refuse AI use, voice notes or Gmail separately in <code>/privacy</code> at any time.</p>
+
+<h2 id="job-records">Your job records</h2>
+<p>For every job you track, GetMeAJob keeps one record: the advert and what it asked for, the CV and cover letter written for it, the dates and status of your application, interview time and place, a short note of what each relevant email said (never the email itself), your interview practice results, and how it ended. This record is kept until the job is over plus six months. A job that has not changed for six months is treated as over, so an open job's record is deleted twelve months after its last change. Each job shows the date it will be forgotten, and a nightly process deletes records when that date comes.</p>
+<p>In <code>/applications</code> you can tap Full record to see everything held about a job, Send me a copy to receive it as files, or Forget this job to delete that one job now; <code>/export</code> and <code>/delete</code> still cover everything at once. Your chat messages are separate and are deleted after one day. Backups are kept for 35 days, so a deleted record can remain in a backup for up to 35 days before it is gone everywhere. The legal basis is your agreement when you start, which you can withdraw at any time in <code>/privacy</code>.</p>
+
 <h2>How long it is kept</h2>
-<p>Your information is kept while you use GetMeAJob. When you send <code>/delete</code>, it is removed from the live database straight away, and from backups within 35 days. Sent emails are removed from the email queue after 30 days. Your credit history is deleted with the rest of your information. A request to join that nobody answers is closed after 14 days.</p>
+<p>Your information is kept while you use GetMeAJob, and each job's record only as long as <a href="#job-records">Your job records</a> says. When you send <code>/delete</code>, it is removed from the live database straight away, and from backups within 35 days. Sent emails are removed from the email queue after 30 days. Your credit history is deleted with the rest of your information. A request to join that nobody answers is closed after 14 days.</p>
 
 <h2>Your rights</h2>
 <p>In the bot, <code>/export</code> sends you everything GetMeAJob holds about you, <code>/delete</code> removes it all, and <code>/privacy</code> lets you change your choices. You can also email <a href="mailto:support@getmeajob.vhanp.com">support@getmeajob.vhanp.com</a> to ask for a copy, a correction or deletion, or with any question. If you are unhappy with the answer, you can complain to the Information Commissioner's Office (<a href="https://ico.org.uk">ico.org.uk</a>).</p>
