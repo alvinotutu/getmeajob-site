@@ -3,20 +3,69 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GetMeAJob</title>
-<link rel="stylesheet" href="style.css">
+<title>GetMeAJob: your job search, done with you</title>
+<meta name="description" content="A UK job-search helper in Telegram: daily matching jobs, a tailored CV and cover letter from your own facts, and every application tracked.">
+<link rel="icon" href="logo.svg" type="image/svg+xml">
+<link rel="stylesheet" href="home.css">
 </head>
 <body>
-<h1>GetMeAJob</h1>
-<p>GetMeAJob is a job-search assistant for people in the UK, used through Telegram. It is a small, private pilot, open only to people invited to try it.</p>
-<p>It helps you:</p>
-<ul>
-<li>find jobs that fit your experience, sent each morning in Telegram (and by email if you choose);</li>
-<li>write a CV and cover letter for a job you pick, from facts you have given it;</li>
-<li>keep track of the jobs you apply for, with reminders to follow up;</li>
-<li>if you choose to connect Gmail, notice replies from employers about your applications.</li>
-</ul>
-<p>Read the <a href="privacy.html">privacy policy</a> to see what GetMeAJob stores, why, and how to remove it.</p>
-<footer>Contact: <a href="mailto:support@getmeajob.vhanp.com">support@getmeajob.vhanp.com</a> · <a href="privacy.html">Privacy policy</a></footer>
+<header class="top">
+  <a class="brand" href="./"><img src="logo.svg" alt="" width="36" height="36"> GetMeAJob</a>
+  <nav><a href="#how">How it works</a> <a href="#faq">FAQ</a> <a href="privacy.html">Privacy</a></nav>
+</header>
+
+<main>
+<section class="hero">
+  <h1>Your job search, done with you.</h1>
+  <p class="lead">GetMeAJob is a job-search helper for people looking for work in the UK. It works inside Telegram: it finds jobs that fit you, writes a CV and cover letter for each one from your own facts, and keeps track of every application.</p>
+  <p class="pilot">It is in a small private pilot, open only to invited people.</p>
+  <a class="button" href="mailto:support@getmeajob.vhanp.com?subject=GetMeAJob%20invite">Ask for an invite</a>
+</section>
+
+<section aria-labelledby="what">
+  <h2 id="what">What it does</h2>
+  <ul class="cards">
+    <li><h3>Jobs that fit, every morning</h3><p>It searches Google Jobs, NHS Jobs, Teaching Vacancies, Reed and Adzuna for the job titles, towns, distance and pay you choose, and sends the best matches with a short reason for each.</p></li>
+    <li><h3>A CV and cover letter for each job</h3><p>Paste an advert and it writes a tailored CV and cover letter as Word and PDF files. Everything is checked against your own profile, so nothing is invented. If the advert asks for something your profile doesn't show, it asks you first.</p></li>
+    <li><h3>Every application tracked</h3><p>It keeps a record of where you have applied, reminds you when an application goes quiet, sends a Monday summary and can write a short follow-up note.</p></li>
+    <li><h3>Interviews</h3><p>Reminders the evening before and two hours before, a one-message briefing on the job, and interview practice with feedback that uses only your own facts.</p></li>
+    <li><h3>Your Gmail, if you want</h3><p>Connect Gmail and it tells you about replies, interview invitations and rejections, warns you about emails that look like job scams, and can draft a reply that is only sent when you tap Send.</p></li>
+    <li><h3>Chat in your own words</h3><p>Type or send a voice note: "show my applications", "my Asda interview is Tuesday at 10". Anything that changes your settings or applications is shown first and only happens when you tap Yes.</p></li>
+  </ul>
+</section>
+
+<section aria-labelledby="how">
+  <h2 id="how">How it works</h2>
+  <ol class="steps">
+    <li><strong>Get your invite</strong> and open GetMeAJob in Telegram.</li>
+    <li><strong>Send /start</strong> and agree to how your data is used.</li>
+    <li><strong>Send your CV</strong> (PDF, Word or a clear photo) or answer a few questions. You check your profile before anything is written for you.</li>
+    <li><strong>Choose what to look for</strong>: job titles, towns and the pay you need. The first matches arrive the next morning.</li>
+  </ol>
+</section>
+
+<section aria-labelledby="why">
+  <h2 id="why">Why people use it</h2>
+  <ul class="why">
+    <li><strong>Honest documents.</strong> Built only from facts you have given it. If it can't back something up, it leaves it out and tells you.</li>
+    <li><strong>UK-first.</strong> UK job sites, including NHS Jobs and Teaching Vacancies, and UK spelling.</li>
+    <li><strong>Your data stays yours.</strong> Stored in London on Amazon Web Services; /export gives you a copy and /delete removes it.</li>
+    <li><strong>Clear costs.</strong> 150 free credits on the first of every month. Only CVs, cover letters and drafted email replies use credits; daily jobs, reminders and the tracker are free and never stop.</li>
+  </ul>
+</section>
+
+<section aria-labelledby="faq">
+  <h2 id="faq">Questions</h2>
+  <details><summary>Does it apply for jobs for me?</summary><p>No. You apply yourself, on the employer's website or by email. GetMeAJob writes the documents and keeps track of where you have applied.</p></details>
+  <details><summary>Will it make things up on my CV?</summary><p>No. Every document is checked against your own profile. If the advert asks for something you haven't told it, it asks you first, and it never puts in a number, employer or qualification you don't have.</p></details>
+  <details><summary>What does it cost?</summary><p>Everyone gets 150 free credits on the first of each month. A tailored CV and cover letter uses 35, a CV only 10, a cover letter only 15, a general CV 20 and a drafted email reply 2. Everything else is free. Extra credits can be bought with Telegram Stars.</p></details>
+  <details><summary>Who sees my information?</summary><p>It is stored in the UK (London). To read your CV and write documents, text is sent to Anthropic, a US AI company; voice notes, if you use them, go to OpenAI. During the pilot, and only if you agree, the person who runs GetMeAJob can read your conversations with the bot for 30 days to improve it. See the <a href="privacy.html">privacy policy</a> for the details.</p></details>
+  <details><summary>How do I stop?</summary><p>Send /pause to stop the morning jobs, or /delete to remove everything held about you.</p></details>
+</section>
+</main>
+
+<footer>
+  <p>Contact: <a href="mailto:support@getmeajob.vhanp.com">support@getmeajob.vhanp.com</a> · <a href="privacy.html">Privacy policy</a></p>
+</footer>
 </body>
 </html>
