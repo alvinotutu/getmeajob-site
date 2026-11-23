@@ -8,7 +8,7 @@
 </head>
 <body>
 <h1>Privacy policy</h1>
-<p>Last updated: 18 November 2026</p>
+<p>Last updated: 23 November 2026</p>
 <p>GetMeAJob is a job-search assistant used through Telegram, run as a small private pilot by one person in the UK. That person decides how your information is used (the "controller" under UK data protection law). You can reach them at <a href="mailto:support@getmeajob.vhanp.com">support@getmeajob.vhanp.com</a>.</p>
 
 <h2>What GetMeAJob stores</h2>
@@ -21,13 +21,14 @@
 <li><strong>If you connect Gmail</strong>: short notes about messages that concern your job applications (see below). Never your emails themselves.</li>
 <li><strong>Chat with the assistant</strong>: we keep your last day of chat messages so the assistant can follow the conversation, then delete them. Notes you ask it to remember stay until you remove them in <code>/memory</code>. We never save notes about health, immigration, money worries or other sensitive topics. If you practise an interview, a short record of how it went is kept.</li>
 <li><strong>A review log, only if you agree</strong>: during the pilot, the person who runs GetMeAJob may ask whether they can look back at your chats with the assistant to find where it went wrong. Only if you say yes, and they switch it on for you, the bot keeps what you typed or said, the buttons you tapped, its replies and a short note of what the assistant looked up, for 30 days. It never keeps a message that brought up the support reply, voice recordings, the contents of files you sent, Gmail connection codes or payment details. Only that person reads it, on the server; it is not sent to anyone else.</li>
+<li><strong>If you use the browser extension</strong>: for each browser you connect, when it was connected, when it was last used and when the connection ends, plus an encrypted key that lets that browser prove it is yours (see <a href="#extension">The browser extension</a>).</li>
 <li><strong>Your credits</strong>: your credit balance and a history of what used or added credits (for example "CV and cover letter"), so you can see it with <code>/credits</code>.</li>
 <li><strong>If you ask to join</strong>: when someone not yet using GetMeAJob messages the bot, it keeps their Telegram ID, first name and username so the team can let them in. The name and username are removed as soon as the request is answered; the Telegram ID is kept so the answer stands.</li>
 </ul>
 
 <h2>Why, and on what basis</h2>
 <p>Everything above is used only to give you the service you asked for: finding jobs, writing your documents, tracking applications and reminding you. GetMeAJob relies on your consent, which it asks for before it stores anything, and which you can withdraw at any time with <code>/privacy</code> in the bot.</p>
-<p>It never sells your information, never uses it for advertising, and never shares it with employers. It sends nothing to an employer for you unless you tap Send on an application or follow-up email it has shown you (see Connecting Gmail).</p>
+<p>It never sells your information, never uses it for advertising, and never shares it with employers. It sends nothing to an employer for you unless you tap Send on an application or follow-up email it has shown you (see Connecting Gmail). The browser extension fills in a form for you to check; only you press the site's Submit.</p>
 
 <h2>Connecting Gmail (optional)</h2>
 <p>If you choose to connect your Gmail account, GetMeAJob asks Google for permission to read your mail and to send replies. It uses that access only to:</p>
@@ -42,6 +43,17 @@
 <p>It keeps only short notes, linked to your applications. It does not store your emails. The text of an email that might be job-related is sent to an AI provider (Anthropic) only to pick out the job details, then discarded. It is not used to train models, and no person reads it. Mail in your spam folder is checked only for messages from employers and job sites. Other messages are never read or kept beyond checking whether they are job-related.</p>
 <p>GetMeAJob's use and transfer of information received from Google APIs adheres to the <a href="https://developers.google.com/terms/api-services-user-data-policy">Google API Services User Data Policy</a>, including the Limited Use requirements.</p>
 <p>You can disconnect at any time in the bot, or from your Google Account under Security, then Third-party connections.</p>
+
+<h2 id="extension">The browser extension (optional)</h2>
+<p>"GetMeAJob: Help me apply" is a Chrome extension that fills in a job application form on any site from the answers you have already approved in the bot. You connect it once with a code from <code>/extension</code>.</p>
+<ul>
+<li><strong>What it reads:</strong> only when you click <em>Fill in this form</em>, and only on that tab, the form's questions (labels, field names, options and the headings inside the form), and whether a field already has something in it, so it never overwrites you. It does not read the rest of the page, your browsing history or other tabs, and it never reads or keeps passwords.</li>
+<li><strong>What it sends to GetMeAJob:</strong> which of your jobs you are applying for, how many fields it filled, and when you tell it you have submitted. It does not send what is on the page or what you type into the form.</li>
+<li><strong>What it gets from GetMeAJob:</strong> your approved answers (name, email, phone, town, LinkedIn, right to work), your supporting statement and why you want the job, and your CV and cover letter for that job, so it can attach them. These are encrypted so that only your connected browser can read them.</li>
+<li><strong>What it keeps in your browser:</strong> only the connection key. Your answers and files are used for that form and not stored by the extension.</li>
+<li><strong>What it never does:</strong> press Submit, tick a box for you, pay a fee, or send anything to anyone but GetMeAJob.</li>
+</ul>
+<p>Filling a form uses credits (see <code>/credits</code>); if nothing was filled in, they are given back. You can disconnect a browser in the extension, or every browser with <code>/extension off</code> in the bot. A connection also ends by itself after 90 days. The extension's use of your information follows the Chrome Web Store User Data Policy, including its Limited Use requirements: it is used only to fill in the form you asked for, never sold, never used for advertising and never read by a person.</p>
 
 <h2>Who else handles your information</h2>
 <ul>
@@ -65,7 +77,7 @@
 <p>Your information is kept while you use GetMeAJob, and each job's record only as long as <a href="#job-records">Your job records</a> says. When you send <code>/delete</code>, it is removed from the live database straight away, and from backups within 42 days. Sent emails are removed from the email queue after 30 days. Your credit history is deleted with the rest of your information, except that a record of each payment you made (amount, date and Telegram's payment reference, without your name) is kept for 6 years for accounting, even after <code>/delete</code>. A review log entry is deleted after 30 days (and from backups within 42 days more), or straight away with <code>/delete</code>, and <code>/export</code> includes it. A request to join that nobody answers is closed after 14 days.</p>
 
 <h2>Your rights</h2>
-<p>In the bot, <code>/export</code> sends you everything GetMeAJob holds about you, <code>/delete</code> removes it all (except those payment records), and <code>/privacy</code> lets you change your choices. You can also email <a href="mailto:support@getmeajob.vhanp.com">support@getmeajob.vhanp.com</a> to ask for a copy, a correction or deletion, or with any question. If you are unhappy with the answer, you can complain to the Information Commissioner's Office (<a href="https://ico.org.uk">ico.org.uk</a>).</p>
+<p>In the bot, <code>/export</code> sends you everything GetMeAJob holds about you (for the extension, the list of connected browsers, never their keys), <code>/delete</code> removes it all (except those payment records), and <code>/privacy</code> lets you change your choices. You can also email <a href="mailto:support@getmeajob.vhanp.com">support@getmeajob.vhanp.com</a> to ask for a copy, a correction or deletion, or with any question. If you are unhappy with the answer, you can complain to the Information Commissioner's Office (<a href="https://ico.org.uk">ico.org.uk</a>).</p>
 
 <h2>Changes</h2>
 <p>If this policy changes in a way that matters, the bot will tell you before the change applies.</p>
